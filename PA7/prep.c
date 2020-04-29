@@ -24,7 +24,7 @@ void shuffle(int wDeck[][13])
 
 
 /* deal cards from deck */
-void deal(int wDeck[][13], const char *wFace[], const char *wSuit[], struct hand *player)
+void deal(int wDeck[][13], struct hand *player)
 {
 	int row = 0;  // row number
 	int col = 0;  // col number
@@ -46,10 +46,34 @@ void deal(int wDeck[][13], const char *wFace[], const char *wSuit[], struct hand
 	}
 }
 
-void print_pHand(struct hand player)
+void print_pHand(struct hand player, const char* wFace[], const char* wSuit[])
 {
-	for (int card = 0; card < 5; ++card)
+	int f = 0, s = 0;
+	int i;
+
+	for (i = 0; i < 5; ++i)
 	{
-		printf("");
+		s = player.pHand[i].suit;
+		f = player.pHand[i].face;
+
+		printf("[%5s : %-8s%c]\t", wSuit[s], wFace[f]);
 	}
+}
+
+/* draw one new card */
+void draw_one_card(int wDeck[][13], struct hand player, int input)
+{
+	int row = 0;  // row number
+	int col = 0;  // col number
+
+	do
+		{
+			row = rand() % 4;
+			col = rand() % 13;
+
+		} while (wDeck[row][col] == 0);
+
+		player.pHand[input].suit = row;
+		player.pHand[input].face = col;
+		wDeck[row][col] = 0;
 }

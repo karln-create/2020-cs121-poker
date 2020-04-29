@@ -21,17 +21,17 @@ Description: 5-Card-Draw Poker played between a Player and Bot.
 
         d) Modify the card dealing function provided in the base code so that a poker Hand is dealt. You should be able to use this this function to deal and draw any number of cards.
 
-        e) Write functions to determine if the Hand contains: -----> one pair.
+        e) Write functions to determine if the Hand contains: -----> one pair.  (flag: combocheck = 1)
                                                              \
-                                                              `----> two pair.
+                                                              `----> two pair.  (flag: combocheck = 2)
                                                              \
-                                                              `----> 3-o-a-kind (e.g. three Jacks).
+                                                              `----> 3-o-a-kind (e.g. three Jacks).     (flag: combocheck = 3)
                                                              \
-                                                              `----> 4-o-a-kind (e.g. four Aces).
+                                                              `----> 4-o-a-kind (e.g. four Aces).       (flag: combocheck = 4)
                                                              \
-                                                              `----> a flush (e.g. five cards of the same suit).
+                                                              `----> a flush (e.g. five cards of the same suit).    (flag: combocheck = 5)
                                                              \
-                                                              `----> a straight (e.g. five cards of consecutive face values).
+                                                              `----> a straight (e.g. five cards of consecutive face values).   (flag: combocheck = 6)
 
 ## 2. Simulating the Dealer:
 
@@ -106,7 +106,21 @@ Description: 5-Card-Draw Poker played between a Player and Bot.
     Once the winner is found, the program will ask the player whether they want to continue or return to exit. If 'exit' then the program terminates.
 
 
-# Development History
+# Development History:
+Update | 2020/04/27/MON, 14:35 PDT
+    Write a a linear search function to check for duplicates.
+
+Update | 2020/04/22/WED, 12:48 PDT
+    I must write the combo checking algorithms for the Bot player. There is no way around it.
+
+Update | 2020/04/22/WED, 11:55 PDT
+    TO-DO: Build algorithm checking for onepair using binary search.
+            Set a quality flag for the Hand's quality with enum.
+
+Update | 2020/04/21/TUE, 19:22 PDT
+    DONE: the draw phase (for the Human player) is done. Will go back to modify for the Bot player at a different time.
+    TO-DO: Combo checking algorithms. Review algorithms from Yahtzee (PA5).
+
 Update | 2020/04/21/TUE, 14:20 PDT
     DONE: modifying the deal function for both the Human and Bot players. Also modified it to update the card deck with the dealt cards removed from the deck's pool.
     TO-DO: Skip the Betting phses for now, focus on getting a complete deal-draw-compare sequence running.

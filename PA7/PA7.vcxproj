@@ -138,17 +138,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="combocheck.c" />
     <ClCompile Include="core.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="prep.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="combocheck.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="prep.h" />
     <ClInclude Include="root.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="README.md" />
+    <None Include="..\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="BASECODE.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -10,13 +10,6 @@ void print_gamerules(void);
 
 int main(void)
 {
-	/* initialize memory arrays of suit and face, to be referenced through out the game */
-	const char *suit[4] = {"Hearts", "Diamonds", "Clubs", "Spades"};
-
-	const char *face[13] = {"Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven", "Eight",
-							"Nine", "Ten", "Jack", "Queen", "King"};
-
-	
 	srand((unsigned)time(NULL)); /* seed random-number generator. */
 
 	
@@ -36,7 +29,7 @@ int main(void)
 		}
 		else if (mainmenu_input == 2)	/* control switch for starting a new poker game */
 		{
-			play_game(suit, face);
+			game();
 			system("pause");
 			mainmenu_input = 0;
 		}
@@ -47,11 +40,10 @@ int main(void)
 		}
 		else
 		{
-			printf("\tInvalid input.\n");
+			printf("\nInvalid input.\n");
 			mainmenu_input = 0;
 		}
 	}
-
 
 	return 0;
 }
