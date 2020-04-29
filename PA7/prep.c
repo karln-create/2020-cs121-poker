@@ -51,6 +51,7 @@ void print_pHand(struct hand player, const char* wFace[], const char* wSuit[])
 	int f = 0, s = 0;
 	int i;
 
+
 	for (i = 0; i < 5; ++i)
 	{
 		s = player.pHand[i].suit;
